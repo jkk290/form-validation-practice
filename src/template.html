@@ -3,7 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Form Validation</title>
   </head>
-  <body></body>
+  <body>
+
+    <form novalidate>
+      <label for="email">Email: </label>
+      <input type="email" id="email" name="email" required>
+      <span class="error" aria-live="polite"></span>
+      <label for="country">Country: </label>
+      <input type="text" id="country" name="country" required>
+      <span class="error" aria-live="polite"></span>
+      <label for="postal-code">Postal code: </label>
+      <input type="text" id="postal-code" name="postal-code" required>
+      <span class="error" aria-live="polite"></span>
+      <label for="password">Password: </label>
+      <input type="password" id="password" name="password" required>
+      <span class="error" aria-live="polite"></span>
+      <label for="confirm-password">Confirm Password:</label>
+      <input type="password" id="confirm-password" name="confirm-password" required>
+      <span class="error" aria-live="polite"></span>
+
+      <button>Submit</button>
+    </form>
+  </body>
 </html>
+
+
+
+<!--
+email
+country
+postal code
+password
+confirm password
+-->
