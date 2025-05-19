@@ -48,6 +48,8 @@ function showEmailError() {
 function showCountryError() {
     if (country.validity.valueMissing) {
         countryError.textContent = 'You need to enter a country.';
+    } else if (country.validity.tooShort) {
+        countryError.textContent = 'Input is too short.';
     }
 
     countryError.className = 'error active';
