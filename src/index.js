@@ -1,15 +1,28 @@
 import "./styles.css";
 
 const form = document.querySelector('form');
+
 const email = document.getElementById('email');
 const emailError = document.querySelector('#email + span.error');
+
+const country = document.getElementById('country');
+const countryError = document.querySelector('#country + span.error');
 
 email.addEventListener('input', (event) => {
     if (email.validity.valid) {
         emailError.textContent = '';
         emailError.className = 'error';
     } else {
-        showError();
+        showEmailError();
+    }
+});
+
+country.addEventListener('input', (event) => {
+    if (country.validity.valid) {
+        countryError.textContent = '';
+        countryError.className = 'error';
+    } else {
+        showCountryError();
     }
 });
 
@@ -21,7 +34,7 @@ form.addEventListener('submit', (event) => {
     }
 });
 
-function showError() {
+function showEmailError() {
     if (email.validity.valueMissing) {
         emailError.textContent = 'You need to enter an email address.';
     } else if (email.validity.typeMismatch) {
@@ -29,5 +42,14 @@ function showError() {
     }
 
     emailError.className = 'error active';
+
+}
+
+function showCountryError() {
+    if (country.validity.valueMissing) {
+        countryError.textContent = 'You need to enter a country.';
+    }
+
+    countryError.className = 'error active';
 
 }
